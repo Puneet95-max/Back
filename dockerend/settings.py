@@ -60,7 +60,7 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(days=365 * 100),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
     'SLIDING_TOKEN_LIFETIME': timedelta(days=30),
     'SLIDING_TOKEN_REFRESH_LIFETIME_LATE_USER': timedelta(days=1),
@@ -110,19 +110,34 @@ WSGI_APPLICATION = 'dockerend.wsgi.application'
 #     }
 # }
 
-DATABASES = {  
-    'default': {  
-        'ENGINE': 'django.db.backends.mysql',  
-        'NAME': 'defaultdb',  
-        'USER': 'avnadmin',  
-        'PASSWORD': 'AVNS_Ahv2O1zBlACcRDrNw-W',  
-        'HOST': 'mysql-f33bdcc-puneet12345v-d71d.b.aivencloud.com',  
-        'PORT': '22906',  
-        'OPTIONS': {  
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"  
-        }  
-    }  
-} 
+# DATABASES = {  
+#     'default': {  
+#         'ENGINE': 'django.db.backends.mysql',  
+#         'NAME': 'defaultdb',  
+#         'USER': 'avnadmin',  
+#         'PASSWORD': 'AVNS_Ahv2O1zBlACcRDrNw-W',  
+#         'HOST': 'mysql-f33bdcc-puneet12345v-d71d.b.aivencloud.com',  
+#         'PORT': '22906',  
+#         'OPTIONS': {  
+#             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"  
+#         }  
+#     }  
+# } 
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Puneetx$default',
+        'USER': 'Puneetx',
+        'PASSWORD': 'testx2020',
+        'HOST': 'Puneetx.mysql.pythonanywhere-services.com',
+        'PORT': '3306',
+    }
+}
+
+
+
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -160,6 +175,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
